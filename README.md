@@ -22,3 +22,9 @@ the hidden card the dealer has could show --
 can we please change the background color
 show the wins and loses on one side of the screen
 the value of the card needs to stand out form the background so that it could be visual
+
+remember, when the html is pushed it needs to work well with the code
+change parts of the code/html if needed so it can work
+we should put a play again button so playeres can try their luck again
+add a feature that could change an Ace to either 1 or 11
+I'll try my best to approve any changes/pull requests you guys do
