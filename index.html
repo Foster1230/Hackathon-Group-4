@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
     <h1>Let's play a game!</h1>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light blackjack-nav">
+        <img src="https://cdn.shopify.com/s/files/1/1788/4029/articles/Card_spade.svg_9cf87a27-6d61-47f3-8431-80f32611e2cc_1024x1024.png?v=1565209205"
+            alt="spade-logo" style="width:77px; height:100px; margin-right: 50px;">
+        <a class="navbar-brand" nhref="#">Blackjack</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- put status bar below navbar, so it's not inside of it. -->
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="status-card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Bet: </li>
+            <li class="list-group-item">Wins: 1</li>
+            <li class="list-group-item">Losses: 3</li>
+            <li class="list-group-item">Total: +$0.75</li>
+        </ul>
+    </div>
     <script src="./logic.js">
     </script>
+
 </body>
+
 </html>
