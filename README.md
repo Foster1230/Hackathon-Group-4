@@ -8,3 +8,17 @@ a score that has an if statement that would be an automatic lose if it goes beyo
 21 are insta wins
 if more than one player get 21, goes to tie breaker
 add more if needed
+
+make sure to remove anything betting related
+randomize the cards so that its different everytime a player plays against the dealer
+add any blackjack rules that could work
+make sure that one card in the dealers hand is always hiddin until the end of the game
+you can add a win and loss score if you want to
+add the win lose condition
+
+html
+show the value of the card on screen
+the hidden card the dealer has could show --
+can we please change the background color
+show the wins and loses on one side of the screen
+the value of the card needs to stand out form the background so that it could be visual
