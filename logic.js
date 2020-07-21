@@ -1,6 +1,3 @@
-alert("This is a test")
-
-
 var suits = [
     "Clubs",
     "Hearts",
@@ -9,10 +6,8 @@ var suits = [
 ]
 var ID = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 var cardDeck = []
-var userCardOne;
-var userCardTwo;
-var dealerCardOne;
-var dealerCardTwo
+var player = {name: "player", points: 0, hand: []}
+var computer = {name: "computer", points: 0, hand: []}
 
 for (var i = 0; i < ID.length; i++) {
     for(var x = 0; x < suits.length; x++) {
@@ -39,13 +34,25 @@ function shuffle() {
         cardDeck[location2] = temp
     }
 }
-shuffle()
-console.log("done shuffling") 
+shuffle() 
 function assignCards() {
-    userCardOne = cardDeck[1]
-    userCardTwo = cardDeck[2]
-    dealerCardOne = cardDeck[3]
-    dealerCardTwo = cardDeck[4]
+    player.hand.push(cardDeck[1]) 
+    player.hand.push(cardDeck[2])
+    computer.hand.push(cardDeck[3])
+    computer.hand.push(cardDeck[4])
 }
 assignCards()
-console.log(userCardOne + userCardTwo + dealerCardOne + dealerCardTwo)
+function checkPlayerCardValue () {
+    player.points = 0
+    for(b = 0; b < player.hand.length; b++) {
+        player.points += player.hand[b].Value
+    }
+}
+function checkComputerCardValue () {
+    computer.points = 0
+    for(b = 0; b < computer.hand.length; b++) {
+        computer.points += computer.hand[b].Value
+    }
+}
+checkPlayerCardValue()
+checkComputerCardValue()
