@@ -25,7 +25,7 @@ for (var i = 0; i < ID.length; i++) {
 }
 
 
-console.log(cardDeck)
+console.log(cardDeck) 
 console.log(card)
 
 var sevenC = { Suit: "Club", Value: "7", }
