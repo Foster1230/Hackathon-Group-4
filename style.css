@@ -22,3 +22,33 @@ body {
     float: right;
     top: 300px;
 }
+
+.button{
+    background-color: gray;
+    font-size:25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.button-1{
+    position: fixed;
+    left: 75%;
+    top: 120px;
+    border-radius: 8px;
+    text-align: center;
+    width: 70px;
+
+}
+
+.button-2{
+    position: fixed;
+    left: 82.5%;
+    top: 120px;
+    border-radius: 8px;
+    width: 90px;
+}
