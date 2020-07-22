@@ -11,17 +11,21 @@ var computer = { name: "computer", points: 0, hand: [] }
 var playerWins = 0
 var playerLosses = 0
 var nextCard = 0
-
+var userturn = true
 function restartGame() {
     player = { name: "player", points: 0, hand: [] }
     computer = { name: "computer", points: 0, hand: [] }
+    userturn = true
+    nextCard = 0
+    createDeck()
     shuffle()
     assignCards()
+    renderCards()
     checkPlayerCardValue()
     checkComputerCardValue()
 }
-
-for (var i = 0; i < ID.length; i++) {
+function createDeck() {
+  for (var i = 0; i < ID.length; i++) {
     for (var x = 0; x < suits.length; x++) {
         var value = parseInt(ID[i]);
         if (ID[i] === "J" || ID[i] === "Q" || ID[i] === "K") {
@@ -32,7 +36,9 @@ for (var i = 0; i < ID.length; i++) {
         var card = { Suits: suits[x], ID: ID[i], Value: value }
         cardDeck.push(card)
     }
+}  
 }
+createDeck()
 
 
 
@@ -54,6 +60,47 @@ function assignCards() {
     computer.hand.push(cardDeck[48])
     alert("Your hand is " + player.hand[0] + " and " + player.hand[1] + ". The computer's face up card is " + computer.hand[0] + ".")
 }
+
+//render player cards
+function renderCards () {
+    document.getElementById('card-deck').innerHTML = "";
+    document.getElementById('computer-card-deck').innerHTML = "";
+    for (var p = 0; p < player.hand.length; p++) {
+        var card = document.createElement("div");
+        var value1 = document.createElement("div")
+        var suitRendered = document.createElement("div")
+        card.className = "card"
+        value1.className = "value"
+        suitRendered.className = "suit " + player.hand[p].suit
+
+        value1.innerHTML = player.hand[p].Value
+        suitRendered.innerHTML = player.hand[p].Suits
+        card.appendChild(value1)
+        card.appendChild(suitRendered)
+
+        document.getElementById("card-deck").appendChild(card)
+    }
+    for (var g = 0; g < computer.hand.length; g++) {
+        
+        var card = document.createElement("div");
+        var value1 = document.createElement("div")
+        var suitRendered = document.createElement("div")
+        
+        card.className="card"
+        
+        value1.className = "value"
+        suitRendered.className = "suit " + computer.hand[g].suit
+
+        value1.innerHTML = computer.hand[g].Value
+        suitRendered.innerHTML = computer.hand[g].Suits
+        card.appendChild(value1)
+        card.appendChild(suitRendered)
+
+        document.getElementById("computer-card-deck").appendChild(card)
+    }
+}
+
+
 assignCards()
 function checkPlayerCardValue() {
     player.points = 0
@@ -69,6 +116,7 @@ function checkComputerCardValue() {
 }
 checkPlayerCardValue()
 checkComputerCardValue()
+renderCards()
 
 function compareScores() {
 
@@ -87,6 +135,7 @@ function compareScores() {
         document.getElementById("Losses").innerHTML = ""
         userLost()
     }
+    alert("this is to see if everything renders")
     restartGame()
 }
 
@@ -110,8 +159,10 @@ function computerChecker() {
     if (computer.points < 17) {
 
         computer.hand.push(cardDeck[nextCard])
+        
         nextCard++
         checkComputerCardValue()
+        renderCards()
         computerChecker()
     } else if (computer.points === 17 || computer.points > 17 && computer.points < 21 || computer.points === 21) {
         alert("the dealer stands")
@@ -131,27 +182,48 @@ function computerChecker() {
 function computerTurn() {
     computerChecker()
 }
+function checkForAce() {
+    for(var r = 0; r < player.hand.length; r++){
+        if(player.hand[r].Value === 11 && player.points > 21){
+            player.hand[r].Value = 1
+            checkPlayerCardValue()
 
+        } 
+    }
+    if(player.points > 21) {
+        alert("You have gone over 21 and have bust")
+        playerLosses++
+        document.getElementById("Losses").innerHTML = ""
+        userLost()
+        restartGame() 
+    }
+}
 
 
 function hitFunction() {
     console.log("This is where the hit function will go.");
     player.hand.push(cardDeck[nextCard])
     nextCard++
+    renderCards()
     checkPlayerCardValue();
+    checkForAce ()
     if (player.points > 21) {
-        alert("You have busted by going over 21")
-        playerLosses++
-        document.getElementById("Losses").innerHTML = ""
-        userLost()
-        restartGame()
+        checkForAce ()
+        
+
     }
 }
     function standFunction() {
         console.log("This is where the stand function will go.");
+        userturn = false
         checkPlayerCardValue()
+        renderCards ()
         computerTurn()
     }
+
+
+
+
 
 
 
