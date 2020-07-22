@@ -12,6 +12,14 @@ var playerWins = 0
 var playerLosses = 0
 var nextCard = 0
 
+function restartGame() {
+    player = { name: "player", points: 0, hand: [] }
+    computer = { name: "computer", points: 0, hand: [] }
+    shuffle()
+    assignCards()
+    checkPlayerCardValue()
+    checkComputerCardValue()
+}
 
 for (var i = 0; i < ID.length; i++) {
     for (var x = 0; x < suits.length; x++) {
@@ -44,6 +52,7 @@ function assignCards() {
     player.hand.push(cardDeck[50])
     computer.hand.push(cardDeck[49])
     computer.hand.push(cardDeck[48])
+    alert("Your hand is " + player.hand[0] + " and " + player.hand[1] + ". The computer's face up card is " + computer.hand[0] + ".")
 }
 assignCards()
 function checkPlayerCardValue() {
@@ -78,6 +87,7 @@ function compareScores() {
         document.getElementById("Losses").innerHTML = ""
         userLost()
     }
+    restartGame()
 }
 
 
@@ -110,7 +120,8 @@ function computerChecker() {
         alert("The dealer has bust")
         playerWins++
         document.getElementById("Wins").innerHTML = ""
-            userWon()
+        userWon()
+        restartGame()
 
     }
 
@@ -121,41 +132,28 @@ function computerTurn() {
     computerChecker()
 }
 
-//need to change this to activate on logic
-document.onkeyup = function (event) {
 
-    var keypressed = event.key
-    if (keypressed === "a") {
-        playerWins++
-        document.getElementById("Wins").innerHTML = ""
-        userWon()
 
-    } else if (keypressed === "h") {
-        player.hand.push(cardDeck[nextCard])
-        nextCard++
-        checkPlayerCardValue()
-        if (player.points > 21) {
-            alert("You have busted by going over 21")
-            playerLosses++
-            document.getElementById("Losses").innerHTML = ""
-            userLost()
-            //restart game function here
-        }
-    } else if (keypressed === "s") {
+function hitFunction() {
+    console.log("This is where the hit function will go.");
+    player.hand.push(cardDeck[nextCard])
+    nextCard++
+    checkPlayerCardValue();
+    if (player.points > 21) {
+        alert("You have busted by going over 21")
+        playerLosses++
+        document.getElementById("Losses").innerHTML = ""
+        userLost()
+        restartGame()
+    }
+}
+    function standFunction() {
+        console.log("This is where the stand function will go.");
         checkPlayerCardValue()
         computerTurn()
     }
 
 
-}
-
-function hitFunction(){
-    console.log("This is where the hit function will go.");
-}
-
-function standFunction(){
-    console.log("This is where the stand function will go.");
-}
 
 
 
