@@ -73,7 +73,7 @@ function renderCards () {
         value1.className = "value"
         suitRendered.className = "suit " + player.hand[p].suit
 
-        value1.innerHTML = player.hand[p].Value
+        value1.innerHTML = player.hand[p].ID
         suitRendered.innerHTML = player.hand[p].Suits
         card.appendChild(value1)
         card.appendChild(suitRendered)
@@ -91,7 +91,7 @@ function renderCards () {
         value1.className = "value"
         suitRendered.className = "suit " + computer.hand[g].suit
 
-        value1.innerHTML = computer.hand[g].Value
+        value1.innerHTML = computer.hand[g].ID
         suitRendered.innerHTML = computer.hand[g].Suits
         card.appendChild(value1)
         card.appendChild(suitRendered)
