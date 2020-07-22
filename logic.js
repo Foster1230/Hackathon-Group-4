@@ -149,6 +149,14 @@ document.onkeyup = function (event) {
 
 }
 
+function hitFunction(){
+    console.log("This is where the hit function will go.");
+}
+
+function standFunction(){
+    console.log("This is where the stand function will go.");
+}
+
 
 
 
