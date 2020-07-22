@@ -8,6 +8,8 @@ var ID = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 var cardDeck = []
 var player = {name: "player", points: 0, hand: []}
 var computer = {name: "computer", points: 0, hand: []}
+var playerWins = 0
+var playerLosses = 0
 
 for (var i = 0; i < ID.length; i++) {
     for(var x = 0; x < suits.length; x++) {
@@ -56,3 +58,44 @@ function checkComputerCardValue () {
 }
 checkPlayerCardValue()
 checkComputerCardValue()
+
+
+//DOMManipulation for user wins and losses
+var targetDiv = document.getElementById("Wins")
+var targetDiv2 = document.getElementById("Losses")
+targetDiv.append(playerWins)
+targetDiv2.append(playerLosses)
+
+function userWon () {
+targetDiv.append("Wins: " + playerWins)
+}
+function userLost () {
+    targetDiv2.append("Losses: " + playerLosses)
+}
+
+ //need to change this to activate on logic
+    document.onkeyup = function (event) {
+        
+   var keypressed = event.key
+   if(keypressed === "a") { 
+     playerWins++
+     document.getElementById("Wins").innerHTML = ""  
+     userWon()
+   
+   
+   } else {
+       playerLosses++
+       document.getElementById("Losses").innerHTML = ""
+       userLost()
+        
+   }
+   
+    
+}
+
+
+    
+
+
+ 
+
