@@ -35,7 +35,7 @@ body {
     display:inline-block;
 }
 
-.button-1{
+.button-hit{
     position: fixed;
     left: 75%;
     top: 120px;
@@ -45,7 +45,7 @@ body {
 
 }
 
-.button-2{
+.button-stand{
     position: fixed;
     left: 82.5%;
     top: 120px;
