@@ -61,6 +61,27 @@ function checkComputerCardValue() {
 checkPlayerCardValue()
 checkComputerCardValue()
 
+function compareScores() {
+
+    checkPlayerCardValue()
+    checkComputerCardValue()
+    if (player.points > computer.points) {
+        alert("You won: You had a score of " + player.points + " and the computer had a score of " + computer.points)
+        playerWins++
+        document.getElementById("Wins").innerHTML = ""
+        userWon()
+    } else if (player.points === computer.points) {
+        alert("This round is a push. Both you and the dealer had a score of " + player.points)
+    } else if (player.points < computer.points) {
+        alert("You lost: You had a score of " + player.points + " and the computer had a score of " + computer.points)
+        playerLosses++
+        document.getElementById("Losses").innerHTML = ""
+        userLost()
+    }
+}
+
+
+
 
 
 //DOMManipulation for user wins and losses
@@ -75,24 +96,29 @@ function userWon() {
 function userLost() {
     targetDiv2.append("Losses: " + playerLosses)
 }
-function computerChecker () {
-    if(computer.points < 17){
+function computerChecker() {
+    if (computer.points < 17) {
 
-    computer.hand.push(cardDeck[nextCard])
-    nextCard++
-    checkComputerCardValue ()
-    computerChecker ()
-} else if (computer.points === 17 || computer.points > 17 && computer.points < 21 || computer.points === 21 ) {
-    alert("the dealer stands")
-} else if (computer.points > 21) {
-    alert("The dealer has bust")
+        computer.hand.push(cardDeck[nextCard])
+        nextCard++
+        checkComputerCardValue()
+        computerChecker()
+    } else if (computer.points === 17 || computer.points > 17 && computer.points < 21 || computer.points === 21) {
+        alert("the dealer stands")
+        compareScores()
+    } else if (computer.points > 21) {
+        alert("The dealer has bust")
+        playerWins++
+        document.getElementById("Wins").innerHTML = ""
+            userWon()
+
+    }
+
 }
 
-}
 
-
-function computerTurn () {
-    computerChecker ()
+function computerTurn() {
+    computerChecker()
 }
 
 //need to change this to activate on logic
@@ -103,12 +129,6 @@ document.onkeyup = function (event) {
         playerWins++
         document.getElementById("Wins").innerHTML = ""
         userWon()
-
-
-    } else if (keypressed === "b") {
-        playerLosses++
-        document.getElementById("Losses").innerHTML = ""
-        userLost()
 
     } else if (keypressed === "h") {
         player.hand.push(cardDeck[nextCard])
@@ -122,19 +142,13 @@ document.onkeyup = function (event) {
             //restart game function here
         }
     } else if (keypressed === "s") {
+        checkPlayerCardValue()
         computerTurn()
     }
 
 
 }
 
-function hitFunction(){
-    console.log("This is where the function that results from the user clicking 'hit' will go");
-}
-
-function standFunction(){
-    console.log("This is where the stand function will go.");
-}
 
 
 
