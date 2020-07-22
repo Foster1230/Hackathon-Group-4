@@ -93,6 +93,15 @@ function userLost () {
     
 }
 
+function hitFunction(){
+    console.log("This is where the function that results from the user clicking 'hit' will go");
+}
+
+function standFunction(){
+    console.log("This is where the stand function will go.");
+}
+
+
 
     
 
