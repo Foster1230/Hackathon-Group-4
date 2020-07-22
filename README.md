@@ -28,3 +28,9 @@ change parts of the code/html if needed so it can work
 we should put a play again button so playeres can try their luck again
 add a feature that could change an Ace to either 1 or 11
 I'll try my best to approve any changes/pull requests you guys do
+
+the game itself
+it would be easier if we put just the value of the card and leave the hidden card the dealer has as --
+however if you guys want to do images included with the cards we need to get the card images and add the value so that it could add up
+if the player goes over 21 its an instant lose
+we would also need an image of the back of the card for the hidden card
