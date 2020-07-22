@@ -54,6 +54,24 @@ function assignCards() {
     computer.hand.push(cardDeck[48])
     alert("Your hand is " + player.hand[0] + " and " + player.hand[1] + ". The computer's face up card is " + computer.hand[0] + ".")
 }
+
+//render player cards
+function renderCards () {
+    document.getElementById('card-deck').innerHTML = "";
+        var card = document.createElement("div");
+        var value1 = document.createElement("div")
+        var suitRendered = document.createElement("div")
+        card.className = "card"
+        value1.className = "value"
+        suit.className = "suit " + player.hand[p].suit
+
+        value1.innerHTML = player.hand[p].Value
+        suit.innerHTML = player.hand[p].Suits
+
+    }
+}
+
+
 assignCards()
 function checkPlayerCardValue() {
     player.points = 0
@@ -152,6 +170,10 @@ function hitFunction() {
         checkPlayerCardValue()
         computerTurn()
     }
+
+
+
+
 
 
 
