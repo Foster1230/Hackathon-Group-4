@@ -73,10 +73,9 @@ function renderCards () {
         var suitRendered = document.createElement("div")
         card.className = "card";
         cardID.className = "cardID"
-        suitRendered.className = "suit " + player.hand[p].Suits;
+        suitRendered.className = "suit-" + player.hand[p].Suits;
 
         cardID.innerHTML = player.hand[p].ID;
-        suitRendered.innerHTML = player.hand[p].Suits
         card.appendChild(suitRendered)
         card.appendChild(cardID)
         document.getElementById("card-deck").appendChild(card)
@@ -87,10 +86,9 @@ function renderCards () {
         var suitRendered = document.createElement("div")
         card.className = "card";
         cardID.className = "cardID"
-        suitRendered.className = "suit " + computer.hand[g].Suits;
+        suitRendered.className = "suit-" + computer.hand[g].Suits;
 
         cardID.innerHTML = computer.hand[g].ID;
-        suitRendered.innerHTML = computer.hand[g].Suits
         card.appendChild(suitRendered)
         card.appendChild(cardID)
         document.getElementById("computer-card-deck").appendChild(card)
