@@ -159,14 +159,16 @@ function computerChecker() {
     if (computer.points < 17) {
         tempCard = cardDeck[nextCard]
         computer.hand.push(cardDeck[nextCard])
-        
+        nextCard++
         alert("The dealer drew the " + tempCard.ID + " of " + tempCard.Suits + ".")
         checkComputerCardValue()
+        checkForAceComputer()
         alert("The dealer's new total is " + computer.points + ".")
         
-        nextCard++
-        checkComputerCardValue()
+        
+        
         renderCards()
+        
         computerChecker()
     } else if (computer.points === 17 || computer.points > 17 && computer.points < 21 || computer.points === 21) {
         
@@ -212,10 +214,11 @@ function checkForAce() {
 }
 // Allows ace to have a value of 1 || 11 if the computer's hand is over 21
 function checkForAceComputer () {
-    for(var r = 0; r < player.hand.length; r++){
+    for(var r = 0; r < computer.hand.length; r++){
         if(computer.hand[r].Value === 11 && computer.points > 21){
             computer.hand[r].Value = 1
             checkComputerCardValue()
+            alert("The dealer had an ace. The ace's value is now 1. The dealer has a total of " + computer.points + ".")
             computerChecker()
 
             
@@ -245,7 +248,7 @@ function hitFunction() {
         renderCards ()
         computerTurn()
         if (computer.points >21){
-            checkForComputerAce()
+            checkForAceComputer()
         }
     }
 
