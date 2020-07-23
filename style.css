@@ -56,28 +56,32 @@ body {
 }
 .card{
     display: inline-block;
-    right: 80%;
-    top: 450px;
-    width:93px;    
+    right: 35%;
+    top: 250px;
+    width: 25%;    
     margin: 10px 0;
-    text-align:center;
+    text-align: center;
     font-size:30px
 }
 .dealer-card{
     opacity: 0;
 }
+
 .card .suit-Hearts{
     height: 100px;
     width: 90px;
     background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
     background-position-x: 90px;
+    margin: auto;
 }
 .card .suit-Spades{
     height: 100px;
     width: 90px;
     background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+    margin: auto;
 }
 .card .suit-Clubs{
+    margin: auto;
     height: 100px;
     width: 90px;
     background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
@@ -86,14 +90,20 @@ body {
 
 }
 .card .suit-Diamonds{
+    margin: auto;
     height: 100px;
     width: 90px;
     background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
     background-position-y: 100px;
 }
 #computer-card-deck{
-    left: 80%;
-}  
+    text-align: center;
+    
+}
+
+
+
+
 
   
 

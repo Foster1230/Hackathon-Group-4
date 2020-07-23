@@ -1,5 +1,5 @@
 
-//define variables 
+// Define variables for card arrays, player/computer hands, player/computer values
 var suits = [
     "Clubs",
     "Hearts",
@@ -16,7 +16,9 @@ var nextCard = 0
 var userturn = true
 var tempCard;
 
-//define functions (restarting the game, creating card deck)
+
+
+// Define functions (restarting the game, creating card deck)
 function restartGame() {
     player = { name: "player", points: 0, hand: [] }
     computer = { name: "computer", points: 0, hand: [] }
@@ -47,9 +49,9 @@ function createDeck() {
 createDeck()
 
 
-//shuffling deck and assign cards from the deck to player and computer
+// Shuffling deck and assign cards from the deck to player and computer
 function shuffle() {
-    for (var j = 0; j < 1000; j++) {
+    for (var j = 0; j < 10000; j++) {
         var location1 = Math.floor(Math.random() * cardDeck.length)
         var location2 = Math.floor(Math.random() * cardDeck.length)
         var temp = cardDeck[location1]
@@ -66,7 +68,7 @@ function assignCards() {
     computer.hand.push(cardDeck[48])
 }
 
-//render player & computer cards
+// Render player & computer cards
 function renderCards () {
     document.getElementById("card-deck").innerHTML = "";
     document.getElementById("computer-card-deck").innerHTML = "";
@@ -98,9 +100,8 @@ function renderCards () {
     }
 
 }
-
-
 assignCards()
+// Checks the vlaue of the player's and computer's hand
 function checkPlayerCardValue() {
     player.points = 0
     for (b = 0; b < player.hand.length; b++) {
@@ -116,7 +117,7 @@ function checkComputerCardValue() {
 checkPlayerCardValue()
 checkComputerCardValue()
 renderCards()
-//winning conditions
+// Winning and Losing conditions
 function compareScores() {
 
     checkPlayerCardValue()
@@ -141,7 +142,7 @@ function compareScores() {
 
 
 
-//DOMManipulation for user wins and losses
+//DOMManipulation for displaying Wins and Losses
 var targetDiv = document.getElementById("Wins")
 var targetDiv2 = document.getElementById("Losses")
 targetDiv.append(playerWins)
@@ -153,7 +154,7 @@ function userWon() {
 function userLost() {
     targetDiv2.append("Losses: " + playerLosses)
 }
-//coding the dealer's turn
+// Coding the dealer's turn
 function computerChecker() {
     if (computer.points < 17) {
         tempCard = cardDeck[nextCard]
@@ -184,14 +185,14 @@ function computerChecker() {
     }
 
 }
-
+// Alerts the player of the dealer's hidden card + value of the dealer's hand
 function computerTurn() {
     alert("The dealer's face down card is the " + computer.hand[0].ID + " of " + computer.hand[0].Suits + ".")
     checkComputerCardValue()
     alert("The dealer's current total is " + computer.points + ".")
     computerChecker()
 }
-//if there's an ace...
+// Allows ace to have a value of 1 || 11 if the player's hand is over 21
 function checkForAce() {
     for(var r = 0; r < player.hand.length; r++){
         if(player.hand[r].Value === 11 && player.points > 21){
@@ -209,6 +210,7 @@ function checkForAce() {
         restartGame() 
     }
 }
+// Allows ace to have a value of 1 || 11 if the computer's hand is over 21
 function checkForAceComputer () {
     for(var r = 0; r < player.hand.length; r++){
         if(computer.hand[r].Value === 11 && computer.points > 21){
@@ -222,7 +224,7 @@ function checkForAceComputer () {
     }
 }
 
-//connecting hit and stand buttons to logic
+// Connecting hit and stand buttons to logic
 function hitFunction() {
     console.log("This is where the hit function will go.");
     player.hand.push(cardDeck[nextCard])
