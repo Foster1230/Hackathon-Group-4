@@ -10,7 +10,7 @@ body {
 }
 
 .blackjack-nav{
-    background-color: red !important;
+    background-color: #c1251f !important;
 }
 
 .navbar-brand {
@@ -23,11 +23,7 @@ body {
     top: 300px;
 }
 
-.button{
-    background-color:bisque;
-    font-size:25px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
+
 
 .divider{
     width:5px;
@@ -59,10 +55,13 @@ body {
 
 }
 .card{
-    float: right;
-    top: 400px;
-    width:100px;    
-    margin: 5px 0;
+    display: inline-block;
+    right: 80%;
+    top: 450px;
+    width:93px;    
+    margin: 10px 0;
+    text-align:center;
+    font-size:30px
 }
 .dealer-card{
     opacity: 0;
@@ -70,22 +69,33 @@ body {
 .card .suit-Hearts{
     height: 100px;
     width: 90px;
-    background-image: url('https://www.seekpng.com/ima/u2a9o0y3t4y3w7t4/')
+    background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+    background-position-x: 90px;
 }
 .card .suit-Spades{
-    background-color: green;
+    height: 100px;
+    width: 90px;
+    background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
 }
 .card .suit-Clubs{
     height: 100px;
     width: 90px;
-    background-image: 
+    background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+    background-position-x: 90px;
+    background-position-y: 100px; 
 
 }
 .card .suit-Diamonds{
     height: 100px;
     width: 90px;
-    background-image: url('https://image.shutterstock.com/image-vector/diamonds-colored-card-suit-icon-260nw-565201909.jpg');
+    background-image: url('https://www.thatsoftwaredude.com/images/post/0f631eeb-6c4a-4bfd-9f86-e0a08ae8584b.png');
+    background-position-y: 100px;
 }
+#computer-card-deck{
+    left: 80%;
+}  
+
+  
 
 
    
