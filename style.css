@@ -42,6 +42,9 @@ body {
     border-radius: 8px;
     text-align: center;
     width: 70px;
+    font-size:25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
 
 }
 
@@ -51,15 +54,39 @@ body {
     top: 120px;
     border-radius: 8px;
     width: 90px;
+    font-size:25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
 }
 .card{
+    float: right;
+    top: 400px;
+    width:100px;    
     margin: 5px 0;
 }
 .dealer-card{
     opacity: 0;
 }
+.card .suit-Hearts{
+    height: 100px;
+    width: 90px;
+    background-image: url('https://www.seekpng.com/ima/u2a9o0y3t4y3w7t4/')
+}
+.card .suit-Spades{
+    background-color: green;
+}
+.card .suit-Clubs{
+    height: 100px;
+    width: 90px;
+    background-image: 
+
+}
+.card .suit-Diamonds{
+    height: 100px;
+    width: 90px;
+    background-image: url('https://image.shutterstock.com/image-vector/diamonds-colored-card-suit-icon-260nw-565201909.jpg');
+}
 
 
-/* css for rendered cards */
    
 
