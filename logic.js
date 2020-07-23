@@ -1,3 +1,5 @@
+
+  
 var suits = [
     "Clubs",
     "Hearts",
@@ -63,49 +65,78 @@ function assignCards() {
 
 //render player cards
 function renderCards () {
-    document.getElementById('card-deck').innerHTML = "";
-
-    document.getElementById('computer-card-deck').innerHTML = "";
-    for (var p = 0; p < player.hand.length; p++) {
-        var card = document.createElement("div");
-        var value1 = document.createElement("div")
+    document.getElementById("card-deck").innerHTML = "";
+    document.getElementById("computer-card-deck").innerHTML = "";
+    for(var p = 0; p < player.hand.length; p++) {
+        var card = document.createElement("div")
+        var cardID = document.createElement("div");
         var suitRendered = document.createElement("div")
-        card.className = "card"
-        value1.className = "value"
-        suitRendered.className = "suit " + player.hand[p].suit
+        card.className = "card";
+        cardID.className = "cardID"
+        suitRendered.className = "suit " + player.hand[p].Suits;
 
-        value1.innerHTML = player.hand[p].ID
+        cardID.innerHTML = player.hand[p].ID;
         suitRendered.innerHTML = player.hand[p].Suits
-        card.appendChild(value1)
         card.appendChild(suitRendered)
-
+        card.appendChild(cardID)
         document.getElementById("card-deck").appendChild(card)
     }
-    for (var g = 0; g < computer.hand.length; g++) {
-        
-        var card = document.createElement("div");
-        var value1 = document.createElement("div")
+    for(var g = 0; g < computer.hand.length; g++) {
+        var card = document.createElement("div")
+        var cardID = document.createElement("div");
         var suitRendered = document.createElement("div")
-        
-        card.className="card"
-        
-        value1.className = "value"
-        suitRendered.className = "suit " + computer.hand[g].suit
+        card.className = "card";
+        cardID.className = "cardID"
+        suitRendered.className = "suit " + computer.hand[g].Suits;
 
-        value1.innerHTML = computer.hand[g].ID
+        cardID.innerHTML = computer.hand[g].ID;
         suitRendered.innerHTML = computer.hand[g].Suits
-        card.appendChild(value1)
         card.appendChild(suitRendered)
-
+        card.appendChild(cardID)
         document.getElementById("computer-card-deck").appendChild(card)
-
-        suit.className = "suit " + player.hand[p].suit
-
-        value1.innerHTML = player.hand[p].Value
-        suit.innerHTML = player.hand[p].Suits
-
-
     }
+//     document.getElementById('card-deck').innerHTML = "";
+
+//     document.getElementById('computer-card-deck').innerHTML = "";
+//     for (var p = 0; p < player.hand.length; p++) {
+//         var card = document.createElement("div");
+//         var value1 = document.createElement("div")
+//         var suitRendered = document.createElement("div")
+//         card.className = "card"
+//         value1.className = "value"
+//         suitRendered.className = "suit " + player.hand[p].suit
+
+//         value1.innerHTML = player.hand[p].ID
+//         suitRendered.innerHTML = player.hand[p].Suits
+//         card.appendChild(value1)
+//         card.appendChild(suitRendered)
+
+//         document.getElementById("card-deck").appendChild(card)
+//     }
+//     for (var g = 0; g < computer.hand.length; g++) {
+        
+//         var card = document.createElement("div");
+//         var value1 = document.createElement("div")
+//         var suitRendered = document.createElement("div")
+        
+//         card.className="card"
+        
+//         value1.className = "value"
+//         suitRendered.className = "suit " + computer.hand[g].suit
+
+//         value1.innerHTML = computer.hand[g].ID
+//         suitRendered.innerHTML = computer.hand[g].Suits
+//         card.appendChild(value1)
+//         card.appendChild(suitRendered)
+
+//         document.getElementById("computer-card-deck").appendChild(card)
+
+//         suit.className = "suit " + player.hand[p].suit
+
+//         value1.innerHTML = player.hand[p].Value
+//         suit.innerHTML = player.hand[p].Suits
+
+
 }
 
 
