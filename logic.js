@@ -64,6 +64,7 @@ function assignCards() {
 //render player cards
 function renderCards () {
     document.getElementById('card-deck').innerHTML = "";
+
     document.getElementById('computer-card-deck').innerHTML = "";
     for (var p = 0; p < player.hand.length; p++) {
         var card = document.createElement("div");
@@ -97,6 +98,13 @@ function renderCards () {
         card.appendChild(suitRendered)
 
         document.getElementById("computer-card-deck").appendChild(card)
+
+        suit.className = "suit " + player.hand[p].suit
+
+        value1.innerHTML = player.hand[p].Value
+        suit.innerHTML = player.hand[p].Suits
+
+
     }
 }
 
