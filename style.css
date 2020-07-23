@@ -52,6 +52,14 @@ body {
     border-radius: 8px;
     width: 90px;
 }
+.card{
+    margin: 5px 0;
+}
+.dealer-card{
+    opacity: 0;
+}
+
 
 /* css for rendered cards */
    
+
