@@ -170,7 +170,7 @@ function computerChecker() {
         alert("the dealer stands")
         compareScores()
     } else if (computer.points > 21) {
-        
+        checkForAceComputer()
         
         alert("The dealer has bust")
         playerWins++
@@ -211,6 +211,8 @@ function checkForAceComputer () {
         if(computer.hand[r].Value === 11 && computer.points > 21){
             computer.hand[r].Value = 1
             checkComputerCardValue()
+            computerChecker()
+
             
 
         } 
