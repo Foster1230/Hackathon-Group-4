@@ -1,5 +1,5 @@
 
-  
+//define variables 
 var suits = [
     "Clubs",
     "Hearts",
@@ -15,6 +15,8 @@ var playerLosses = 0
 var nextCard = 0
 var userturn = true
 var tempCard;
+
+//define functions (restarting the game, creating card deck)
 function restartGame() {
     player = { name: "player", points: 0, hand: [] }
     computer = { name: "computer", points: 0, hand: [] }
@@ -45,7 +47,7 @@ function createDeck() {
 createDeck()
 
 
-
+//shuffling deck and assign cards from the deck to player and computer
 function shuffle() {
     for (var j = 0; j < 1000; j++) {
         var location1 = Math.floor(Math.random() * cardDeck.length)
@@ -64,7 +66,7 @@ function assignCards() {
     computer.hand.push(cardDeck[48])
 }
 
-//render player cards
+//render player & computer cards
 function renderCards () {
     document.getElementById("card-deck").innerHTML = "";
     document.getElementById("computer-card-deck").innerHTML = "";
@@ -114,7 +116,7 @@ function checkComputerCardValue() {
 checkPlayerCardValue()
 checkComputerCardValue()
 renderCards()
-
+//winning conditions
 function compareScores() {
 
     checkPlayerCardValue()
@@ -151,6 +153,7 @@ function userWon() {
 function userLost() {
     targetDiv2.append("Losses: " + playerLosses)
 }
+//coding the dealer's turn
 function computerChecker() {
     if (computer.points < 17) {
         tempCard = cardDeck[nextCard]
@@ -182,13 +185,13 @@ function computerChecker() {
 
 }
 
-
 function computerTurn() {
     alert("The dealer's face down card is the " + computer.hand[0].ID + " of " + computer.hand[0].Suits + ".")
     checkComputerCardValue()
     alert("The dealer's current total is " + computer.points + ".")
     computerChecker()
 }
+//if there's an ace...
 function checkForAce() {
     for(var r = 0; r < player.hand.length; r++){
         if(player.hand[r].Value === 11 && player.points > 21){
@@ -217,7 +220,7 @@ function checkForAceComputer () {
     }
 }
 
-
+//connecting hit and stand buttons to logic
 function hitFunction() {
     console.log("This is where the hit function will go.");
     player.hand.push(cardDeck[nextCard])
