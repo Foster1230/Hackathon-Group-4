@@ -47,8 +47,28 @@ function createDeck() {
 }  
 }
 createDeck()
+//event listener
+document.onkeyup = function (event) {
+    var keyPressed = event.key
+    if(keyPressed === "/") {
+    document.getElementById("computer-card-deck").innerHTML = "";
+    for(var g = 0; g < computer.hand.length; g++) {
+        var card = document.createElement("div")
+        var cardID = document.createElement("div");
+        var suitRendered = document.createElement("div")
+        card.className = "card";
+        cardID.className = "cardID"
+        suitRendered.className = "suit-" + computer.hand[g].Suits;
 
-
+        cardID.innerHTML = computer.hand[g].ID;
+        card.appendChild(suitRendered)
+        card.appendChild(cardID)
+        document.getElementById("computer-card-deck").appendChild(card)
+    }
+}
+}
+//if key pressed === ""
+    //
 // Shuffling deck and assign cards from the deck to player and computer
 function shuffle() {
     for (var j = 0; j < 10000; j++) {
